@@ -1,0 +1,39 @@
+.gpm-banner {
+	color: rgb(0, 0, 0);
+	text-align: center;
+	padding: 10px;
+	display: block;
+	justify-content: center;
+	flex-direction: row;
+	align-items: center;
+}
+
+.gpm-title {
+	padding: 10px;
+	justify-content: center;
+	align-self: center;
+}
+
+.gpm-logo {
+	height: 120px;
+	width: 120px;
+}
+
+.gpm-link {
+	padding: 5px;
+}
+
+.gpm-navi {
+	justify-content: center;
+	padding: 3px;
+	margin: 10px;
+}
+
+.gpm-ban {
+	display: flex;
+	justify-content: center;
+}
+
+.gpm-banend {
+	border-bottom: solid 3px black;
+}
