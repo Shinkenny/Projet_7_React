@@ -31,9 +31,6 @@ function App() {
                 <button className="gpm-link">
                   <Link to="/inscription">Inscription</Link>
                 </button>
-                {/* <button className="gpm-link">
-                  <Link to="/messages">Messages</Link>
-                </button> */}
                 <button className="gpm-link">
                   <Link to="/account">Compte</Link>
                 </button>
@@ -41,9 +38,6 @@ function App() {
             </nav>
 
             <Switch>
-              {/* <Route path="/messages">
-                <Messages />
-              </Route> */}
               <Route path="/connexion">
                 <Connexion />
               </Route>
@@ -64,13 +58,6 @@ function App() {
     </div>
   );
 }
-
-// function Home() {
-//   useEffect(() => {
-//     document.title = "Groupomania: Accueil";
-//   });
-//   return <div></div>;
-// }
 
 function Connexion() {
   useEffect(() => {
