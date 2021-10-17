@@ -475,37 +475,77 @@ export default function Messages() {
               timeout="auto"
               unmountOnExit
             >
-              <CardContent>
-                <Typography component="h1" variant="h6">
-                  Poster un nouveau commentaire
-                </Typography>
-                <form className={classes.form} noValidate>
-                  <TextField
-                    onChange={(e) => setNewCommentaire(e.target.value)}
-                    value={newCommentaire}
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="outlined-multiline-static"
-                    label="Commentaire"
-                    multiline
-                    rows={2}
-                    autoComplete="Commentaire"
-                  />
-                  <Button
-                    onClick={SendComment}
-                    type="submit"
-                    fullWidth
-                    variant="contained"
-                    color="primary"
-                    className={classes.submit}
-                    endIcon={<SendIcon />}
-                  >
-                    Envoyer
-                  </Button>
-                </form>
-              </CardContent>
+              {tokenState ? (
+                <CardContent>
+                  <Typography component="h1" variant="h6">
+                    Poster un nouveau commentaire
+                  </Typography>
+                  <form className={classes.form} noValidate>
+                    <TextField
+                      onChange={(e) => setNewCommentaire(e.target.value)}
+                      value={newCommentaire}
+                      variant="outlined"
+                      margin="normal"
+                      required
+                      fullWidth
+                      id="outlined-multiline-static"
+                      label="Commentaire"
+                      multiline
+                      rows={2}
+                      autoComplete="Commentaire"
+                    />
+                    <Button
+                      onClick={SendComment}
+                      type="submit"
+                      fullWidth
+                      variant="contained"
+                      color="primary"
+                      className={classes.submit}
+                      endIcon={<SendIcon />}
+                    >
+                      Envoyer
+                    </Button>
+                  </form>
+                </CardContent>
+              ) : (
+                <div>
+                  <Container className={classes.rootPost}>
+                    <CssBaseline />
+                    <div className={classes.paper}>
+                      <Avatar className={classes.avatarPost}>
+                        <CommentIcon />
+                      </Avatar>
+                      <Typography component="h1" variant="h5">
+                        Vous devez être connecté pour poster un commentaire
+                      </Typography>
+                      <div className={classes.paper}>
+                        <Button
+                          onClick={GoToLogin}
+                          type="submit"
+                          fullWidth
+                          variant="contained"
+                          color="primary"
+                          className={classes.submit2}
+                          endIcon={<SendIcon />}
+                        >
+                          Connexion
+                        </Button>
+                        <Button
+                          onClick={GoToSignUp}
+                          type="submit"
+                          fullWidth
+                          variant="contained"
+                          color="primary"
+                          className={classes.submit2}
+                          endIcon={<SendIcon />}
+                        >
+                          Inscription
+                        </Button>
+                      </div>
+                    </div>
+                  </Container>
+                </div>
+              )}
             </Collapse>
             <Collapse
               in={expanded === post.message_id}
