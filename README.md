@@ -25,16 +25,18 @@ Il sera ajouté plus tard ici si besoin.
 - Ouvrir un terminal dans le dossier "groupomania" et utiliser la commande "yarn start".
 
 Pour s'inscrire sur le réseau social de Groupomania, il faut renseigner:
-- Un nom
-- Un prénom
-- Une adresse e-mail valide
-- Un mot de passe
+- Un nom.
+- Un prénom.
+- Une adresse e-mail valide.
+- Un mot de passe.
+
 Le compte peut être supprimé par l'utilisateur, ainsi que par l'administrateur.
 Un bouton de déconnexion est disponible dans la partie utilisateur.
 
 Une fois connecté vous pouvez:
-- Poster un nouveau message (texte et/ou image)
-- Commenter un message existant
+- Poster un nouveau message (texte et/ou image).
+- Commenter un message existant.
+
 Les messages et commentaires peuvent être supprimés par l'utilisateur, ainsi que par l'administrateur.
 
 ### `yarn start`
