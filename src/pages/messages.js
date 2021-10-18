@@ -120,6 +120,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+//Messages management
 export default function Messages() {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(-1);
@@ -131,6 +132,7 @@ export default function Messages() {
   const token = localStorage.getItem("token");
   let history = useHistory();
 
+  //Check if authentification token is still valid
   const tokenIsValid = (token) => {
     if (token === "" || token == null) {
       console.log("Invalid jwt token");
@@ -143,10 +145,12 @@ export default function Messages() {
     }
   };
 
+  //Handle expanded state to see the comments
   const handleCommentClick = (i) => {
     setExpanded(expanded === i ? -1 : i);
   };
 
+  //Handle state to write a comment
   const handleNewComment = (i) => {
     setNewComment(newComment === i ? -1 : i);
     setNewComMessId(i);
@@ -162,6 +166,7 @@ export default function Messages() {
   const userId = localStorage.getItem("userId");
   const isAdmin = localStorage.getItem("isAdmin");
 
+  //Delete a message
   const handleDelete = (i) => {
     ApiConfig.removeMessage(i)
       .then(() => {
@@ -179,6 +184,7 @@ export default function Messages() {
       });
   };
 
+  //Delete a comment
   const handleDeleteComment = (i) => {
     ApiConfig.removeComment(i)
       .then(() => {
@@ -192,6 +198,7 @@ export default function Messages() {
       });
   };
 
+  //Handle image selection
   function changeHandler(e) {
     let newFile = e.target.files[0];
     if (newFile === "" || newFile == null) {
@@ -203,16 +210,19 @@ export default function Messages() {
     e.target.value = null;
   }
 
+  //Redirect user to inscription page
   function GoToSignUp(e) {
     e.preventDefault();
     history.push("/inscription");
   }
 
+  //Redirect user to connexion page
   function GoToLogin(e) {
     e.preventDefault();
     history.push("/connexion");
   }
 
+  //Post a new message
   function SendMessage(e) {
     e.preventDefault();
     let formData = new FormData();
@@ -246,6 +256,7 @@ export default function Messages() {
     }
   }
 
+  //Post a new comment
   function SendComment(e) {
     e.preventDefault();
     if (newCommentaire === "") {

@@ -16,6 +16,7 @@ import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import ApiConfig from "../api/Api-config";
 
+//Bottom copyright example
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -49,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+//Check informations and try to register a new user
 const SignIn = () => {
   const classes = useStyles();
   const [email, setEmail] = useState("");

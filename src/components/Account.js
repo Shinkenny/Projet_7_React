@@ -70,6 +70,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+//Account management
 export default function Account() {
   const classes = useStyles();
   const forname = localStorage.getItem("prenom");
@@ -85,16 +86,19 @@ export default function Account() {
     }
   };
 
+  //Redirect user to inscription page
   function GoToSignUp(e) {
     e.preventDefault();
     history.push("/inscription");
   }
 
+  //Redirect user to connexion page
   function GoToLogin(e) {
     e.preventDefault();
     history.push("/connexion");
   }
 
+  //Disconnect user
   function DecoAccount(e) {
     e.preventDefault();
     localStorage.clear();
@@ -102,6 +106,7 @@ export default function Account() {
     toast.success("Vous vous êtes bien déconnecté !");
   }
 
+  //Delete user account
   function DeleteAccount(e) {
     e.preventDefault();
     ApiConfig.deleteUser(userId);
