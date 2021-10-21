@@ -29,13 +29,13 @@ import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: "60%",
+    maxWidth: "90%",
     marginLeft: "auto",
     marginRight: "auto",
     marginBottom: 20,
   },
   rootPost: {
-    maxWidth: "65%",
+    maxWidth: "90%",
     marginLeft: "auto",
     marginRight: "auto",
     marginBottom: 20,
@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
   },
-  paper2: {
+  paper3: {
     display: "flex",
     marginLeft: "auto",
     marginRight: "auto",
@@ -98,7 +98,7 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(2, 0, 1),
   },
   submit2: {
-    margin: theme.spacing(2, 1, 0, 1),
+    margin: theme.spacing(2, 0, 0, 0),
   },
   commentBox: {
     display: "flex",
@@ -296,7 +296,7 @@ export default function Messages() {
   return (
     <>
       {tokenState ? (
-        <Container className={classes.rootPost}>
+        <Container className={classes.rootPost} component="main" maxWidth="xs">
           <CssBaseline />
           <div className={classes.paper}>
             <Avatar className={classes.avatarPost}>
@@ -375,7 +375,7 @@ export default function Messages() {
         </Container>
       ) : (
         <div>
-          <Container className={classes.rootPost}>
+          <Container className={classes.rootPost} component="main" maxWidth="xs">
             <CssBaseline />
             <div className={classes.paper}>
               <Avatar className={classes.avatarPost}>
@@ -520,7 +520,7 @@ export default function Messages() {
                 </CardContent>
               ) : (
                 <div>
-                  <Container className={classes.rootPost}>
+                  <Container className={classes.rootPost} component="main" maxWidth="xs">
                     <CssBaseline />
                     <div className={classes.paper}>
                       <Avatar className={classes.avatarPost}>
